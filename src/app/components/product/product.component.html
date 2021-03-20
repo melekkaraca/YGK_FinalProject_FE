@@ -29,7 +29,9 @@
             <td>{{product.unitPrice}}</td>
             <td>{{product.unitPrice |vatAdded:10 |currency}}</td>
             <td>{{product.unitsInStock}}</td>
-            <td><button (click)="addToCart(product)" type="button" class="btn btn-sm btn-success">Sepete Ekle</button></td>
+            <td><button (click)="addToCart(product)" type="button" class="btn btn-sm btn-success">Sepete Ekle</button>
+                <button (click)="delete(product)" type="button" class="btn btn-sm btn-danger">Ürün Sil</button>
+            </td>
         </tr>
     </tbody>
 </table>

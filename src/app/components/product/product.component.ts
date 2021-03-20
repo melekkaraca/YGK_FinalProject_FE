@@ -54,4 +54,15 @@ export class ProductComponent implements OnInit {
     this.cartService.addToCart(product);
  }
 
+ delete(product:Product){
+   this.productService.delete(product).subscribe(response=>{
+    this.toastrService.success(response.message,"Silindi"),
+    this.getProducts();
+  },responseError=>{
+    console.log(responseError)
+    this.toastrService.error(responseError.error)
+  })
+   //this.toastrService.success("Ürün silindi", product.productName)
+ }
+
 }

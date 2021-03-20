@@ -1,0 +1,52 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Ürün Ekle</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="productAddForm">
+                    <div class="mb-3 row">
+                        <label for="productName" class="col-sm-2 col-form-label">Ürün Adı</label>
+                        <div class="form-group col-sm-10">
+                            <input type="text" id="productName" formControlName="productName" class="form-control "
+                                placeholder="Ürün adı" />
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="categoryId" class="col-sm-2 col-form-label">Kategori</label>
+                        <div class="form-group col-sm-10">
+                            <!-- <input type="number" id="categoryId" formControlName="categoryId" class="form-control"
+                                placeholder="Kategori" /><br> -->
+                                <div class="form-group">
+                                    <select class="form-select" formControlName="categoryId" >
+                                        <option *ngFor="let category of categories" [ngValue]="category.categoryId">{{category.categoryName}}</option>
+                                      </select>
+                                </div> 
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="unitsInStock" class="col-sm-2 col-form-label">Stok Adedi</label>
+                        <div class="form-group col-sm-10">
+                            <input type="number" id="unitsInStock" formControlName="unitsInStock" class="form-control"
+                                placeholder="Stok adedi" />
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="unitPrice" class="col-sm-2 col-form-label">Fiyatı</label>
+                        <div class="form-group col-sm-10">
+                            <input type="number" id="unitPrice" formControlName="unitPrice" class="form-control"
+                                placeholder="Fiyatı" />
+                        </div>
+                    </div>
+                     
+                </form>
+            </div>
+            <div class="card-footer ">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
